@@ -222,6 +222,36 @@ ros-maintainer-harness serve --transport sse --port 8765
 
 When sessions are created with `session create` or `session from-pr`, these client configs are generated automatically inside each session directory.
 
+## Repository Structure
+
+This repository now follows a conventional Python project layout:
+
+- `src/ros_maintainer_agent_harness/`: package source code for CLI commands, policy logic, CI integrations, and workspace/session orchestration.
+- `tests/`: unit and integration-oriented tests covering core modules and workflows.
+- `docs/`: architecture, security policy, tooling, and agent integration guides.
+- `.github/workflows/ci.yaml`: CI pipeline for automated checks.
+- `pyproject.toml` and `setup.py`: packaging and build configuration.
+- `LICENSE`: Apache 2.0 licensing information.
+
+## Project Showcase (Portfolio)
+
+`ros_maintainer_agent_harness` demonstrates a production-style developer tooling project focused on safe AI-assisted maintenance for ROS 2 ecosystems.
+
+### What this project showcases
+
+- **Security-first architecture**: strict trust-boundary design between sandboxed AI execution and host-held write credentials.
+- **Policy-driven automation**: enforceable push, PR, and CI safety rules with explicit maintainer approvals.
+- **Operational tooling depth**: session scaffolding, worktree management, CI status tracking, and audit log pipelines.
+- **Integration quality**: support for multiple coding agents/editors through generated MCP configurations.
+- **Tested implementation**: broad test suite across approval workflows, policy checks, scaffolding, server behavior, and utilities.
+
+### Portfolio talking points
+
+- Built a maintainable, extensible Python CLI + MCP server architecture.
+- Encoded governance and safety requirements into auditable, configurable policy controls.
+- Designed a local-first ROS maintainer workflow to reduce unnecessary remote CI load.
+- Created reusable session and developer-experience tooling for multi-agent workflows.
+
 ## Documentation
 
 - **[End-to-End Walkthrough](docs/walkthrough.md)**: Complete step-by-step example of triaging and fixing a ROS 2 PR.
