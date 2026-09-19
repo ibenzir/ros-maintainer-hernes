@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ros_maintainer_agent_harness"
+version = "0.1.0"
+description = "A development harness for AI agents assisting with ROS maintenance"
+readme = "README.md"
+authors = [{ name = "William Woodall" }]
+maintainers = [{ name = "William Woodall", email = "wjwwood@google.com" }]
+license = { text = "Apache-2.0" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX :: Linux",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "pyyaml>=5.3",
+    "mcp>=1.0.0",
+    "requests>=2.25.0",
+    "PyGithub>=1.55",
+]
+
+[project.scripts]
+ros-maintainer-harness = "ros_maintainer_agent_harness.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
